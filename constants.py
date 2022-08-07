@@ -1,12 +1,11 @@
 from enum import Enum
 
-# Colors used
-BROWN = (60, 30, 0)
-TAN = (210, 180, 140)
-BLACK = (0, 0, 0)
+DIMENSION = 8
 
-NUM_ROWS = 8
-NUM_COLS = 8
+SQUARE_SIZE = 60
+
+TOP_OFFSET = 60
+LEFT_OFFSET = 160
 
 
 class PieceColor(Enum):
