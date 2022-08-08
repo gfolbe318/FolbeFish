@@ -38,6 +38,16 @@ class Board():
 
         return ""
 
+    # Adding this function because the __repr__ wasn't doing its job
+    def pretty_print(self):
+        for rank in range(DIMENSION):
+            for file in range(DIMENSION):
+
+                end_char = "\n" if file == DIMENSION - 1 else "  "
+                print(self.board[rank][file], end=end_char)
+
+        print("\n")
+
     def draw_squares(self, window):
         window.fill(pygame.Color('black'))
 
@@ -48,8 +58,8 @@ class Board():
                 color = colors[(row + col) % 2]
 
                 pygame.draw.rect(
-                    window, color, (LEFT_OFFSET + col * SQUARE_SIZE,
-                                    TOP_OFFSET + row * SQUARE_SIZE,
+                    window, color, (HORIZ_OFFSET + col * SQUARE_SIZE,
+                                    VERT_OFFSET + row * SQUARE_SIZE,
                                     SQUARE_SIZE,
                                     SQUARE_SIZE)
                 )
@@ -73,7 +83,7 @@ class Board():
                 if self.board[row][col] != '-':
 
                     image = self.images[self.board[row][col].label]
-                    window.blit(image, (LEFT_OFFSET + col * SQUARE_SIZE,
-                                        TOP_OFFSET + row * SQUARE_SIZE,
+                    window.blit(image, (HORIZ_OFFSET + col * SQUARE_SIZE,
+                                        VERT_OFFSET + row * SQUARE_SIZE,
                                         SQUARE_SIZE,
                                         SQUARE_SIZE))

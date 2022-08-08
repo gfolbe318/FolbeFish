@@ -4,8 +4,8 @@ DIMENSION = 8
 
 SQUARE_SIZE = 60
 
-TOP_OFFSET = 60
-LEFT_OFFSET = 160
+VERT_OFFSET = 60
+HORIZ_OFFSET = 160
 
 
 class PieceColor(Enum):
@@ -20,6 +20,11 @@ class PieceName(Enum):
     ROOK = 3
     QUEEN = 4
     KING = 5
+
+
+class MouseState(Enum):
+    MOUSE_DOWN = 0
+    MOUSE_UP = 1
 
 
 fen_piecename_dict = {
